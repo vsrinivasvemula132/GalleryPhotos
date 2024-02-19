@@ -29,8 +29,9 @@ class MainActivity : AppCompatActivity() {
             .baseUrl("https://www.flickr.com")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-        val retro2 = retrofit1.create(ApiInterface::class.java)
-        val result1 = retro2.getData()
+            .create(ApiInterface::class.java)
+
+        val result1 = retrofit1.getData() //retro2
         result1.enqueue(object:Callback<GalleryPhotos>{
             override fun onResponse(call: Call<GalleryPhotos>, response: Response<GalleryPhotos>) {
                 if(response.code() == 200){
