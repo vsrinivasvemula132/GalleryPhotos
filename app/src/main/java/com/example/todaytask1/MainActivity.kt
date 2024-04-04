@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 
         recyclerview = findViewById(R.id.recyclerview1)
 
-
         val retrofit1 = Retrofit.Builder()
             .baseUrl("https://www.flickr.com")
             .addConverterFactory(GsonConverterFactory.create())
@@ -44,9 +43,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             override fun onFailure(call: Call<GalleryPhotos>, t: Throwable) {
-
             }
-
         })
     }
     fun galleryData(result: GalleryPhotos){
